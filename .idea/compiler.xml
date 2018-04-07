@@ -2,6 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="00-core_main" target="1.8" />
+      <module name="00-core_test" target="1.8" />
+      <module name="01-database_main" target="1.8" />
+      <module name="01-database_test" target="1.8" />
       <module name="gradletestproject_main" target="1.8" />
       <module name="gradletestproject_test" target="1.8" />
     </bytecodeTargetLevel>

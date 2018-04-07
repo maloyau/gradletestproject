@@ -1,22 +1,60 @@
-group 'com.serhii'
-version '1.0-SNAPSHOT'
+allprojects {
+    group 'com.serhii'
+    version '1.0'
 
-apply plugin: 'java'
+    ext {
+        springVersion = '4.3.15.RELEASE'
+        springJpaVersion = '1.11.11.RELEASE'
+        slf4jVersion = '1.7.25'
+        junitVersion = '4.12'
+        hibernateVersion = '5.2.16.Final'
+        jpaVersion = '1.0.2.Final'
+        mysqlVersion = '5.1.46'
+        hsqlVsersion = '2.4.0'
 
-sourceCompatibility = 1.8
+        spring = [
+                core        :"org.springframework:spring-core:$springVersion",
+                webmvc      :"org.springframework:spring-wevmvc:$springVersion",
+                data        :"org.springframework.data:spring-data-jpa:$springJpaVersion",
+                test        :"org.springframework:spring-test:$springVersion"
+        ]
 
-repositories {
-    mavenCentral()
+        log = [
+                slf4japi    :"org.slf4j:slf4j-api:$slf4jVersion",
+                slf4jjdk14  :"org.slf4j:slf4j-jdk14:$slf4jVersion"
+        ]
+
+        db = [
+                hsql        :"org.hsqldb:hsqldb:$hsqlVsersion",
+                mysql       :"mysql:mysql-connector-java:$mysqlVersion",
+                hibernate   :"org.hibernate:hibernate-entitymanager:$hibernateVersion"
+        ]
+
+        misc = [
+                jpa         :"org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$jpaVersion"
+        ]
+
+        test = [
+                junit       :"junit:junit:$junitVersion"
+        ]
+    }
 }
 
-dependencies {
-    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.46'
-    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.11.11.RELEASE'
-    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.16.Final'
-    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.25'
-    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0'
-    testCompile group: 'org.springframework', name: 'spring-test', version: '4.3.15.RELEASE'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile log.slf4japi, log.slf4jjdk14
+        testCompile test.junit
+    }
 }
+
+
+
+

@@ -1,2 +1,4 @@
 rootProject.name = 'gradletestproject'
+include '00-core'
+include '01-database'
 
