@@ -1,7 +1,8 @@
-package com.serhii.service;
+package com.serhii.service.impl;
 
 import com.serhii.entity.User;
 import com.serhii.repository.UserRepository;
+import com.serhii.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

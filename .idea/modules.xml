@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/00-core.iml" filepath="$PROJECT_DIR$/.idea/modules/00-core.iml" group="00-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/00-core/00-core.iml" filepath="$PROJECT_DIR$/.idea/modules/00-core/00-core.iml" group="00-core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/00-core/00-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/00-core/00-core_main.iml" group="00-core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/00-core/00-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/00-core/00-core_test.iml" group="00-core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/01-database/01-database.iml" filepath="$PROJECT_DIR$/.idea/modules/01-database/01-database.iml" group="01-database" />

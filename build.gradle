@@ -7,10 +7,11 @@ allprojects {
         springJpaVersion = '1.11.11.RELEASE'
         slf4jVersion = '1.7.25'
         junitVersion = '4.12'
-        hibernateVersion = '5.2.16.Final'
-        jpaVersion = '1.0.2.Final'
+        hibernateVersion = '4.3.11.Final'
+        jpaVersion = '1.0.0.Final'
         mysqlVersion = '5.1.46'
         hsqlVsersion = '2.4.0'
+        hikariVersion = '2.6.1'
 
         spring = [
                 core        :"org.springframework:spring-core:$springVersion",
@@ -27,10 +28,8 @@ allprojects {
         db = [
                 hsql        :"org.hsqldb:hsqldb:$hsqlVsersion",
                 mysql       :"mysql:mysql-connector-java:$mysqlVersion",
-                hibernate   :"org.hibernate:hibernate-entitymanager:$hibernateVersion"
-        ]
-
-        misc = [
+                hibernate   :"org.hibernate:hibernate-entitymanager:$hibernateVersion",
+                hikari      :"com.zaxxer:HikariCP:$hikariVersion",
                 jpa         :"org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$jpaVersion"
         ]
 
@@ -53,7 +52,10 @@ subprojects {
         compile log.slf4japi, log.slf4jjdk14
         testCompile test.junit
     }
+
 }
+
+
 
 
 

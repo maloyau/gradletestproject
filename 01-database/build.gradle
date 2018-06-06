@@ -1,0 +1,6 @@
+dependencies {
+    compile project(':00-core')
+    compile spring.test, db.hsql, db.hikari
+    testCompile project(':00-core')
+    testCompile spring.test, db.hsql, db.hikari, db.hibernate
+}

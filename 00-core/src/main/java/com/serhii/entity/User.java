@@ -11,6 +11,8 @@ public class User extends AbstractEntity {
     private String username;
     @Column(name = "password", nullable = false)
     private String password;
+    @Column(name = "email", unique = true)
+    private String email;
 
     public User() {
         super();
@@ -30,5 +32,33 @@ public class User extends AbstractEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        if (!username.equals(user.username)) return false;
+        if (!password.equals(user.password)) return false;
+        return email.equals(user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = username.hashCode();
+        result = 31 * result + password.hashCode();
+        result = 31 * result + email.hashCode();
+        return result;
     }
 }
